@@ -23,8 +23,10 @@ Route::post('/contact', 'HomeController@store');
 Route::get('/articles/{post_name}', 'PostsController@show');
 Route::post('/articles/{post_name}', 'PostsController@store');
 
-Route::resource('admin/articles','ArticlesController');
+Route::resource('admin/articles','ArticlesController')->middleware('auth');;
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/logout', 'Auth\LoginController@logout');

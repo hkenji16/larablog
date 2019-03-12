@@ -17,6 +17,18 @@
             <li><a href="/contact">Contact</a></li>
         </ul>
     </div>
+    <div class="top-bar-right">
+        <ul class="menu">
+            <?php if (Auth::check()) { ?>
+                <li><a href="/logout">Logout</a></li>
+            <?php
+            } else {
+            ?>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+            <?php } ?>
+        </ul>
+    </div>
 </div>
 
 <div class="callout large primary">
