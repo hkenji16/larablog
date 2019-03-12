@@ -19,7 +19,10 @@
     </div>
     <div class="top-bar-right">
         <ul class="menu">
-            <?php if (Auth::check()) { ?>
+            <?php if (Auth::check()) {
+                $user = Auth::user();
+                ?>
+                <li><a href="/user/{{ $user->name }}">{{ $user->name }}</a></li>
                 <li><a href="/logout">Logout</a></li>
             <?php
             } else {
